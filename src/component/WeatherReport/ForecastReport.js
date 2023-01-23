@@ -19,28 +19,26 @@ const ForecastReport = () => {
           <h2 className='heading-forecast'>7 days forecast</h2>
         </Grid>
       </Grid>
-      <Grid container className='text-center'>
-        {forecastday?.map((ele) => {
-          return (
-            <>
-              <Grid item xs={4} md={4}>
-                <span>{getForecastFormattedDate(ele?.date)}</span>
-              </Grid>
-              <Grid item xs={4} md={4}>
-                <div className='text-center'>
-                  <img src={ele?.day?.condition?.icon} alt={ele?.day?.condition?.icon} />
-                  {ele?.day?.condition?.text}
-                </div>
-              </Grid>
-              <Grid item xs={4} md={4}>
-                <span>
-                  {ele?.day?.mintemp_c}&deg;/{ele?.day?.maxtemp_c}&deg;
-                </span>
-              </Grid>
-            </>
-          );
-        })}
-      </Grid>
+      {forecastday?.map((ele, index) => {
+        return (
+          <Grid container className='text-center' key={index}>
+            <Grid item xs={4} md={4}>
+              <span>{getForecastFormattedDate(ele?.date)}</span>
+            </Grid>
+            <Grid item xs={4} md={4}>
+              <div className='text-center'>
+                <img src={ele?.day?.condition?.icon} alt={ele?.day?.condition?.icon} />
+                {ele?.day?.condition?.text}
+              </div>
+            </Grid>
+            <Grid item xs={4} md={4}>
+              <span>
+                {ele?.day?.mintemp_c}&deg;/{ele?.day?.maxtemp_c}&deg;
+              </span>
+            </Grid>
+          </Grid>
+        );
+      })}
     </>
   );
 };

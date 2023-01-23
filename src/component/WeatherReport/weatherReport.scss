@@ -1,0 +1,90 @@
+@import '../../styles/variables';
+.main-weather-report-container {
+  background: linear-gradient(180deg, #62b8f6 0%, #2c79c1 77.96%);
+  color: $primary-white;
+  min-height: 43em;
+  margin-bottom: $spacing-sm;
+  padding: $spacing-3xs;
+  .heading-forecast{
+    text-align: center;
+  }
+  .text-center{
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+  }
+  .input-container {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    margin: auto;
+    .input-search-bar {
+      padding: $spacing-3xs $spacing-3xs $spacing-xxs $spacing-sm;
+      font-size: $spacing-lg;
+      border: none;
+      background: #f2f2f2;
+      border-radius: $spacing-sm;
+      margin: 3px $spacing-sm 0 $spacing-3xs;
+      width: 100%;
+    }
+    ::placeholder {
+      color: $color-ghost-white;
+      font-size: $spacing-sm;
+    }
+  }
+  .country-name-info {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: $spacing-md;
+    text-align: center;
+    margin-top: $spacing-sm;
+  }
+  .temp-icon-container {
+    width: 50%;
+    max-width: 12.5rem;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .current-date-info {
+    font-size: $spacing-sm;
+    font-weight: 400;
+    text-align: center;
+    color: $primary-white;
+  }
+  .temp-wrapper{
+    margin-right: 1em;
+  }
+  .current-temp-block {
+    text-align: center;
+    .temperature {
+      font-size: $spacing-12xl;
+    }
+  }
+  .line {
+    border: 1px solid $primary-white;
+    margin: $spacing-xxs 0;
+  }
+  .more-info-row {
+    display: flex;
+    margin-bottom: $spacing-sm;
+    padding: 0 $spacing-xxs;
+    justify-content: center;
+    gap: 5rem;
+    .data {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xxs;
+      .data-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+      }
+    }
+  }
+  .no-data {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
